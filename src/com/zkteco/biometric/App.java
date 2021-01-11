@@ -14,20 +14,18 @@ import org.apache.http.util.EntityUtils;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
+	public static void sendPost(String url, String data) {
         HttpClient httpClient = HttpClientBuilder.create().build();
         try {
-            HttpPost request = new HttpPost("https://pchessle.tk/test/api/end-point/test-api.php");
-            StringEntity params = new StringEntity("details={\"name\":\"xyz\",\"age\":\"20\"}");
+            HttpPost request = new HttpPost(url);
+            StringEntity params = new StringEntity(data);
             request.addHeader("content-type", "application/x-www-form-urlencoded");
             request.setEntity(params);
             HttpResponse response = httpClient.execute(request);
             System.out.print(EntityUtils.toString(response.getEntity()));
         } catch (Exception ex) {
         } finally {
-            // @Deprecated httpClient.getConnectionManager().shutdown(); 
+            // @Deprecated httpClient.getConnectionManager().shutdown();
         }
-
     }
 }

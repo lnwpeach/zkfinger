@@ -16,6 +16,8 @@ import javax.swing.JFrame;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 
+import com.zkteco.biometric.App;
+
 public class ZKFPDemo extends JFrame{
 	/**
 	 * 
